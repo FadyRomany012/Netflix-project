@@ -1,0 +1,29 @@
+<div class="container text-light">
+<div class="navPagination my-5 py-2 w-25 m-auto rounded">
+<ul class="list-unstyled d-flex justify-content-around">
+<li  *ngFor="let page of pages" (click)='changePage(page)'  routerLinkActive='active active-link'>{{page}}</li>
+</ul>
+
+</div>
+    <div class="row">
+
+        <div *ngFor="let movie of allMovies ; let i = index" class="col-md-4">
+            <div class="movie-card my-4">
+                
+        <a [routerLink]="['/moviedetails',i]">
+                <img class="img-fluid" [src]="imgPrefix+movie.poster_path">
+         <div class="movie-desc py-3">
+            <h5 class="pl-1 text-white">{{movie.title}}</h5>
+            <p class="p-3 text-white">{{movie.overview}}</p>
+        </div>
+    </a>
+        </div>
+        </div>
+    </div>
+    <div class="navPagination my-5 py-2 w-25 m-auto rounded">
+        <ul class="list-unstyled d-flex justify-content-around">
+        <li  *ngFor="let page of pages" (click)='changePage(page)'  routerLinkActive='active active-link'>{{page}}</li>
+        </ul>
+        
+        </div>
+</div>
